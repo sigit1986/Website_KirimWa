@@ -38,7 +38,7 @@ const WorkflowSection = () => {
       title: "Klik Kirim Pesan Sekarang",
       description: "Untuk mengirim pesan WhatsApp otomatis, klik tombol Kirim Pesan Sekarang di halaman utama atau di bagian kanan atas layar.",
       icon: (
-        <img src="/public/icons8-cursor-60.png" alt="Klik" className="h-8 w-8" />
+        <img src="../icons8-cursor-60.png" alt="Klik" className="h-8 w-8" />
       ),
     },
     {
