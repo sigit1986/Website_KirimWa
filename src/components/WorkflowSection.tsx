@@ -35,6 +35,14 @@ const WorkflowSection = () => {
   const steps = [
     {
       number: 1,
+      title: "Klik Kirim Pesan Sekarang",
+      description: "Untuk mengirim pesan WhatsApp otomatis, klik tombol Kirim Pesan Sekarang di halaman utama atau di bagian kanan atas layar.",
+      icon: (
+        <img src="/public/icons8-cursor-60.png" alt="Klik" className="h-8 w-8" />
+      ),
+    },
+    {
+      number: 2,
       title: "Tulis Pesan",
       description: "Buat pesan WhatsApp dengan format yang Anda inginkan. Tambahkan teks, emoji, dan media sesuai kebutuhan.",
       icon: (
@@ -44,19 +52,9 @@ const WorkflowSection = () => {
       ),
     },
     {
-      number: 2,
-      title: "Jadwalkan",
-      description: "Atur waktu pengiriman yang tepat untuk pesan Anda. Kirim sekarang atau jadwalkan untuk nanti.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      ),
-    },
-    {
       number: 3,
-      title: "Kirim Otomatis",
-      description: "WAKirim akan mengirim pesan Anda secara otomatis sesuai jadwal. Anda bisa bersantai!",
+      title: "Kirim Pesan",
+      description: "WAKirim akan membuka WhatsApp Web anda dan tinggal klik kirim pesan Anda. Anda bisa bersantai!",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -66,7 +64,7 @@ const WorkflowSection = () => {
   ];
 
   return (
-    <div id="how-it-works" className="section-padding bg-white">
+    <div id="workflow-section" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Cara Kerja <span className="text-primary">WAKirim</span></h2>

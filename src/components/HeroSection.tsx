@@ -1,7 +1,8 @@
 
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
   const phoneRef = useRef<HTMLDivElement>(null);
@@ -30,36 +31,39 @@ const HeroSection = () => {
     }
   }, []);
 
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/page');
+  };
+
   return (
     <div className="min-h-screen pt-20 section-padding flex flex-col md:flex-row items-center bg-gradient-to-b from-gray-50 to-gray-100">
       <div className="w-full md:w-1/2 mb-12 md:mb-0">
         <div className="space-y-6 max-w-xl">
           <div className="inline-block bg-white/80 backdrop-blur-sm rounded-full px-4 py-1 border border-primary/20">
             <p className="text-sm font-medium text-primary flex items-center">
-              <MessageSquare className="w-4 h-4 mr-2" /> WhatsApp Marketing Otomatis
+              <MessageSquare className="w-4 h-4 mr-2" /> WhatsApp Otomatis
             </p>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Kirim Pesan WhatsApp <span className="text-primary">Otomatis</span> & <span className="text-primary">Terjadwal</span>
+            Kirim Pesan WhatsApp <span className="text-primary">Otomatis</span>
           </h1>
           <p className="text-lg text-gray-600">
-            Platform lengkap untuk kirim pesan WhatsApp terjadwal, broadcast massal, dan respon otomatis untuk bisnis dan instansi pemerintah.
+            Platform untuk kirim pesan WhatsApp.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="btn-primary">
+            <Button className="btn-primary" onClick={handleClick}>
             Kirim Pesan Sekarang
             </Button>
-            <Button variant="outline" className="border-whatsapp-dark text-whatsapp-dark hover:bg-whatsapp-dark/5">
-              Pelajari Lebih Lanjut
+            <Button variant="outline" className="border-whatsapp-dark text-whatsapp-dark hover:bg-whatsapp-dark/5" 
+            onClick={() => {
+              const section = document.getElementById('workflow-section');
+              if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>
+              Pelajari Cara Kerja...
             </Button>
-          </div>
-          <div className="flex items-center space-x-2 pt-2">
-            <div className="flex -space-x-2">
-              <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" className="w-8 h-8 rounded-full border-2 border-white" />
-              <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User" className="w-8 h-8 rounded-full border-2 border-white" />
-              <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User" className="w-8 h-8 rounded-full border-2 border-white" />
-            </div>
-            <p className="text-sm text-gray-600">Bergabung dengan <span className="font-semibold">1000+</span> bisnis lainnya</p>
           </div>
         </div>
       </div>

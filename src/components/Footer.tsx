@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">WA<span className="text-primary">Kirim</span></h3>
+            <h3 className="text-2xl font-bold mb-4">WA<span className="text-primary">Kirim.</span></h3>
             <p className="text-gray-400 mb-4">
               Platform pengiriman pesan WhatsApp otomatis untuk bisnis dan instansi pemerintah.
             </p>
@@ -30,41 +30,8 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+        </div>  
           {/* Links */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Produk</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-primary">Fitur</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Harga</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">API</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Integrasi</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Status</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Perusahaan</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-primary">Tentang Kami</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Blog</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Karir</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Kontak</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Media Kit</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Dukungan</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-primary">Bantuan</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Dokumentasi API</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Kebijakan Privasi</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary">Syarat & Ketentuan</a></li>
-            </ul>
-          </div>
-        </div>
-        
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">

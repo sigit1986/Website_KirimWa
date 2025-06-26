@@ -2,6 +2,8 @@
 
 import { useForm } from 'react-hook-form';
 import React, { useMemo } from 'react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 type FormData = {
   phone: string;
@@ -13,7 +15,7 @@ export default function Home() {
   const { register, watch } = useForm<FormData>({
     defaultValues: {
       phone: '628123456789', // Nomor default
-      message: 'Halo, saya tertarik dengan produk Anda!',
+      message: 'Silahkan masukan pesan di sini',
       isMobile: false
     }
   });
@@ -31,57 +33,62 @@ export default function Home() {
   }, [formData]);
 
   return (
-    <main className="min-h-screen p-8 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-6">WhatsApp Sender</h1>
-      
-      <div className="space-y-4">
-        <div>
-          <label className="block mb-1">Nomor WhatsApp</label>
-          <input
-            {...register('phone')}
-            placeholder="628123456789"
-            className="w-full p-2 border rounded"
-          />
-        </div>
+    <div className="min-h-screen">
+      <Navbar />
+      <main className="min-h-screen p-8 max-w-md mx-auto content-center">
+        <h1 className="text-2xl font-bold mb-6">WhatsApp Sender</h1>
+        
+        <div className="space-y-4">
+          <div>
+            <label className="block mb-1">Nomor WhatsApp</label>
+            <input
+              {...register('phone')}
+              placeholder="628123456789"
+              className="w-full p-2 border rounded"
+            />
+          </div>
 
-        <div>
-          <label className="block mb-1">Pesan</label>
-          <textarea
-            {...register('message')}
-            rows={4}
-            className="w-full p-2 border rounded"
-          />
-        </div>
+          <div>
+            <label className="block mb-1">Pesan</label>
+            <textarea
+              {...register('message')}
+              rows={4}
+              className="w-full p-2 border rounded"
+            />
+          </div>
 
-        <div className="flex items-center">
-          <input
-            type="checkbox"
-            id="isMobile"
-            {...register('isMobile')}
-            className="mr-2"
-          />
-          <label htmlFor="isMobile">Optimalkan untuk Mobile</label>
-        </div>
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="isMobile"
+              {...register('isMobile')}
+              className="mr-2"
+            />
+            <label htmlFor="isMobile">Optimalkan untuk Mobile</label>
+          </div>
 
-        <div className="pt-4">
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg inline-flex items-center"
-          >
-            <WhatsAppIcon className="mr-2" />
-            Buka WhatsApp
-          </a>
-        </div>
+          <div className="pt-4">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg inline-flex items-center"
+            >
+              <WhatsAppIcon className="mr-2" />
+              Buka WhatsApp
+            </a>
+          </div>
 
-        {/* Preview Link */}
-        <div className="mt-6 p-4 bg-gray-50 rounded">
-          <p className="text-sm text-gray-500">Link yang dihasilkan:</p>
-          <code className="text-xs break-all">{waLink}</code>
+          {/* Preview Link */}
+          <div className="mt-6 p-4 bg-gray-50 rounded">
+            <p className="text-sm text-gray-500">Link yang dihasilkan:</p>
+            <code className="text-xs break-all">{waLink}</code>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
+    
   );
 }
 
